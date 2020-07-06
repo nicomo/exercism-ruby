@@ -2,10 +2,9 @@
 module Acronym
   def self.abbreviate(sentence)
     words = sentence.scan(/\w+/)
-    acronym = ""
-    words.each { |word| 
-      acronym << word[0,1].upcase
+    acronym = words.map {
+      |word| word[0]
     }
-    return acronym
+    acronym.join.upcase
   end
 end
